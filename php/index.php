@@ -8,6 +8,7 @@ try {
   /*** echo a message saying we have connected ***/
   echo 'Connected to database<br>';
 
+  $starttime = microtime(true);
   /*** Grab latest temperature value ***/
   $sql = "SELECT * FROM $table WHERE sensor_id = 0 and sensor_type = 0 ORDER BY datetime DESC LIMIT 1 OFFSET 0";
   $sth = $dbh->prepare($sql);
@@ -33,6 +34,10 @@ try {
   }
   /*** close the database connection ***/
   $dbh = null;
+  $endtime = microtime(true);
+  $duration = $endtime - $starttime; //calculates total time taken
+  echo $duration;
+  
   print_r($energy);
   echo $tmpr;
 }
