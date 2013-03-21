@@ -2,7 +2,7 @@
   include ("settings.php");
 
   //Page variables
-  $page_title = "Home | Energy Project";
+  $page_title = "Daily Averages | Energy Project";
   $page_file = basename($_SERVER['PHP_SELF'],".php");
 
 
