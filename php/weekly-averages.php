@@ -30,7 +30,8 @@
 
   $chartrows = array();
   $startweek = $result[0]['week'];
-  $stopweek = end($result)['week'];
+  $last = end($result);
+  $stopweek = $last['week'];
   $current_result = $result[0];
 
   for($i=$startweek; $i<=$stopweek;$i++){
